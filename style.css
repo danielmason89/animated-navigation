@@ -2,7 +2,7 @@
 
 :root {
   --primaryColor: #ffeccf;
-  --navColor1: #fff;
+  --navColor1: #433e3e;
   --navColor2: #294023;
   --navColor3: #6f553f;
   --navColor4: #d2c4ae;
@@ -31,13 +31,23 @@ body {
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.7);
+  transform: translateX(-100vw);
+}
+
+.overlay-slide-right {
+  transition: all 0.4s ease-in-out;
+  transform: translateX(0);
+}
+
+.overlay-slide-left {
+  transition: all 0.8s ease-in-out;
+  transform: translateX(-100vw);
 }
 
 /* Nav Menu Items */
 
 nav,
-nav li {
-  list-style: none;
+nav ul {
   height: 100vh;
   margin: 0;
   padding: 0;
@@ -70,7 +80,7 @@ nav li a:hover {
   transform: scale(1.2);
 }
 
-nav li a:before {
+nav li a::before {
   content: "";
   width: 25vw;
   height: 3px;
@@ -99,6 +109,60 @@ nav li:nth-of-type(4) {
 }
 nav li:nth-of-type(5) {
   background: var(--navColor5);
+}
+
+/* Slide in animate with delay for each nav item */
+
+.slide-in-1 {
+  animation: slide-in 0.4s linear 0.2s both;
+}
+.slide-in-2 {
+  animation: slide-in 0.4s linear 0.4s both;
+}
+.slide-in-3 {
+  animation: slide-in 0.4s linear 0.6s both;
+}
+.slide-in-4 {
+  animation: slide-in 0.4s linear 0.8s both;
+}
+.slide-in-5 {
+  animation: slide-in 0.4s linear 1s both;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Slide out animate with delay for each nav item */
+
+.slide-out-1 {
+  animation: slide-out 0.3s linear 0.5s both;
+}
+.slide-out-2 {
+  animation: slide-out 0.3s linear 0.4s both;
+}
+.slide-out-3 {
+  animation: slide-out 0.3s linear 0.3s both;
+}
+.slide-out-4 {
+  animation: slide-out 0.3s linear 0.2s both;
+}
+.slide-out-5 {
+  animation: slide-out 0.3s linear 0.1s both;
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 /* --- Menu Bars ------------------------------------ */
