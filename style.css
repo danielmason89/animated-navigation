@@ -1,12 +1,12 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,700&family=Pacifico&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap");
 
 :root {
-  --primaryColor: #fff;
-  --navColor1: #21292c;
-  --navColor2: #aa3e39;
-  --navColor3: #aa6e39;
-  --navColor4: #236267;
-  --navColor5: #2c8437;
+  --primaryColor: #ffeccf;
+  --navColor1: #fff;
+  --navColor2: #294023;
+  --navColor3: #6f553f;
+  --navColor4: #d2c4ae;
+  --navColor5: #403535;
 }
 
 html {
@@ -16,12 +16,90 @@ html {
 body {
   margin: 0;
   background: #000;
-
+  font-family: "Raleway", sans-serif;
 }
 
 /* --- Navigation Menu ------------------------------ */
 
+/*  Overlay */
 
+.overlay {
+  z-index: 9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Nav Menu Items */
+
+nav,
+nav li {
+  list-style: none;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  list-style: none;
+}
+
+nav ul li {
+  height: 20%;
+  overflow: hidden;
+}
+
+nav li a {
+  position: relative;
+  top: 45%;
+  letter-spacing: 4px;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+nav li a:hover {
+  transform: scale(1.2);
+}
+
+nav li a:before {
+  content: "";
+  width: 25vw;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  top: 47.5%;
+  left: 0;
+  opacity: 0;
+}
+
+nav li a:hover::before {
+  opacity: 1;
+}
+
+nav li:nth-of-type(1) {
+  background: var(--navColor1);
+}
+nav li:nth-of-type(2) {
+  background: var(--navColor2);
+}
+nav li:nth-of-type(3) {
+  background: var(--navColor3);
+}
+nav li:nth-of-type(4) {
+  background: var(--navColor4);
+}
+nav li:nth-of-type(5) {
+  background: var(--navColor5);
+}
 
 /* --- Menu Bars ------------------------------------ */
 
@@ -74,7 +152,7 @@ section {
 }
 
 section#home {
-  background-image: url("https://images.unsplash.com/photo-1581453904507-626ddb717f14?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80");
+  background-image: url("https://images.unsplash.com/photo-1618336753974-aae8e04506aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
   background-size: cover;
   background-position: center center;
 }
